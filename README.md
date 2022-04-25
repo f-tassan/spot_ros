@@ -5,7 +5,3 @@
 ## Documentation
 
 Check-out the usage and user documentation [HERE](http://www.clearpathrobotics.com/assets/guides/melodic/spot-ros/)
-# spot_ros
-# spot_ros
-# spot_ros
-# spot_ros
