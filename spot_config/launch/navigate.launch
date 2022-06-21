@@ -12,10 +12,11 @@
             <param name="frame_id" value="$(arg frame_prefix)map" />
         </node>
         <!-- AMCL used for localization -->
-        <include file="$(find spot_config)/launch/include/amcl.launch">
+        <!-- <include file="$(find spot_config)/launch/include/amcl.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
-        </include>
-
+        </include> -->
+        <!-- GPS used for localization in open environments -->
+        <include file="$(find robot_localization)/launch/gps_localizaion.launch"/>
         <!-- Calls navigation stack -->
         <include file="$(find spot_config)/launch/include/move_base.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
