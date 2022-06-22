@@ -16,7 +16,9 @@
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
         </include> -->
         <!-- GPS used for localization in open environments -->
-        <include file="$(find robot_localization)/launch/gps_localizaion.launch"/>
+        <include file="$(find robot_localization)/launch/gps_localizaion.launch">
+            <arg name="frame_prefix" value="$(arg frame_prefix)"/>
+        </include>
         <!-- Calls navigation stack -->
         <include file="$(find spot_config)/launch/include/move_base.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
