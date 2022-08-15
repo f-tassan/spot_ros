@@ -1,5 +1,58 @@
+<?xml version="1.0"?>
 <sdf version='1.6'>
   <world name='default'>
+  
+    <!-- Custom dog model walking around -->
+    <actor name="dog">
+        <link name="dog_link">
+          <visual name="visual_dog">
+            <geometry>
+              <mesh>
+                <uri>model://dog/meshes/dog.dae</uri>
+                <interpolate_x>true</interpolate_x>                
+              </mesh>
+            </geometry>
+          </visual>
+        </link>
+        <script>
+          <loop>true</loop>
+          <!-- <delay_start>10.000</delay_start> for some reason this crashes the sim -->
+          <auto_start>true</auto_start>
+          <trajectory id="0" type="dog">
+             <waypoint>
+                <time>0.0</time>
+                <pose>3 -7 0 0 0 -1.57</pose>
+             </waypoint>
+             <waypoint>
+                <time>250.0</time>
+                <pose>2.9 -7 0 0 0 -1.57</pose>
+             </waypoint>             
+             <waypoint>
+                <time>267.0</time>
+                <pose>-2 -7 0 0 0 -1.57</pose>
+             </waypoint>
+             <waypoint>
+                <time>270.5</time>
+                <pose>-2 -7 0 0 0 -3</pose>
+             </waypoint>
+             <waypoint>
+                <time>290</time>
+                <pose>-2 0 0 0 0 -3</pose>
+             </waypoint>
+             <waypoint>
+                <time>294</time>
+                <pose>-2 0 0 0 0 -4.57</pose>
+             </waypoint>             
+             <waypoint>
+                <time>306</time>
+                <pose>0 0 0 0 0 -4.57</pose>
+             </waypoint>
+          </trajectory>
+        </script>
+      </actor>
+      
+      
+    <!-- Person walking --> 
     <actor name="actor">
       <skin>
         <filename>walk.dae</filename>
@@ -12,23 +65,27 @@
         <trajectory id="0" type="walking">
           <waypoint>
             <time>1</time>
-            <pose>3 2 0 0 0 -1.57</pose>
-          </waypoint>
-          <waypoint>
-            <time>2</time>
-            <pose>3 -2 0 0 0 -1.57</pose>
-          </waypoint>
-          <waypoint>
-            <time>2.5</time>
-            <pose>3 -2 0 0 0 1.57</pose>
-          </waypoint>
-          <waypoint>
-            <time>8.5</time>
-            <pose>3 2 0 0 0 1.57</pose>
+            <pose>-5 15 0 0 0 -1.57</pose>
           </waypoint>
           <waypoint>
             <time>10</time>
-            <pose>3 2 0 0 0 -1.57</pose>
+            <pose>-5 9.8 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>10.5</time>
+            <pose>-5 9 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>16</time>
+            <pose>-2 9 0 0 0 0</pose>
+          </waypoint>
+          <waypoint>
+            <time>17</time>
+            <pose>-2 9 0 0 0 -1.57</pose>
+          </waypoint>
+          <waypoint>
+            <time>23</time>
+            <pose>-2 6 0 0 0 -1.57</pose>
           </waypoint>
         </trajectory>
       </script>
@@ -219,7 +276,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='collapsed_industrial'>
+      <!--<model name='collapsed_industrial'>
         <pose frame=''>-14.0067 -0.103419 0 0 -0 1.33365</pose>
         <scale>1 1 1</scale>
         <link name='link'>
@@ -228,7 +285,7 @@
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
-      </model>
+      </model> -->
       <model name='drc_practice_blue_cylinder'>
         <pose frame=''>-5.52182 -4.33809 0 0 -0 0</pose>
         <scale>1 1 1</scale>
