@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<sdf version="1.4">
+  <world name="default">
+  
+    <!-- Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    
+    <!-- Source of Light -->
+    <include> 
+      <uri>model://sun</uri>
+    </include>
+    
+    <!-- Custom dog model -->
+    <include>
+      <uri>model://dog</uri>
+      <pose>0 2 0 0 0 0 </pose>
+    </include>
+        
+  </world>
+</sdf>

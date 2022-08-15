@@ -1,0 +1,28 @@
+<launch>
+  <!-- Add Gazebo model path -->
+  <!--<env name= "GAZEBO_MODEL_PATH" value="$(find spot_config)/model/Dog"/>-->
+  <env name="GAZEBO_MODEL_PATH" value="$(find spot_config)/model/Dog:$(optenv GAZEBO_MODEL_PATH)"/>
+
+
+  <!-- Add Gazebo variables -->
+  <arg name = "paused" default = "false"/>
+  <arg name = "headless" default = "false"/>
+  <arg name = "gui" default = "true"/>
+  <arg name = "use_sim_time" default = "true"/>
+  <arg name = "debug" default = "false"/>
+  <arg name = "extra_gazebo_args" default= "--verbose"/>
+  <!-- <arg name = "gazebo_dog_world" default= "$(find spot_config)/worlds/dog.world"/> -->
+
+  <!-- Insert gazebo varibles -->
+  <include file ="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name = "world_name"        value = "$(find spot_config)/worlds/dog.world"/>
+    <arg name = "debug"             value = "$(arg debug)"/> 
+    <arg name = "extra_gazebo_args" value = "$(arg extra_gazebo_args)"/>
+    <arg name = "headless"          value = "$(arg headless)"/>
+    <arg name = "use_sim_time"      value = "$(arg use_sim_time)"/>
+    <arg name = "paused"            value = "$(arg paused)"/>  
+    <arg name = "gui"               value = "$(arg gui)"/> 
+    
+  </include>
+  
+</launch>
