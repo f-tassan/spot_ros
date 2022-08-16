@@ -8,6 +8,8 @@
     <arg name="world_init_x"       default="0.0" /> <!-- X Initial position of the robot in Gazebo World -->
     <arg name="world_init_y"       default="0.0" /> <!-- Y Initial position of the robot in Gazebo World -->
     <arg name="world_init_heading" default="0.0" /> <!-- Initial heading of the robot in Gazebo World -->
+    
+    <env name="GAZEBO_MODEL_PATH"  value="$(find spot_config)/model"/>
 
     <param name="use_sim_time" value="true" />
 
